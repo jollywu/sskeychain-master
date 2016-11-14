@@ -89,6 +89,17 @@ NSString *const kSSKeychainWhereKey = @"svce";
     return [query save:error];
 }
 
++ (BOOL)setShareData:(id)data forService:(NSString *)service group:(NSString *)group error:(NSError **)error
+{
+	SSKeychainQuery *query = [[SSKeychainQuery alloc] init];
+	query.service = service;
+	query.account = service;
+	query.passwordData = data;
+	query.accessGroup = group;
+	return [query save:error];
+}
+
+
 + (NSArray *)allAccounts {
 	return [self allAccounts:nil];
 }

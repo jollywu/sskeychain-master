@@ -130,6 +130,8 @@ extern NSString *const kSSKeychainWhereKey;
 + (BOOL)setPasswordData:(NSData *)password forService:(NSString *)serviceName account:(NSString *)account;
 + (BOOL)setPasswordData:(NSData *)password forService:(NSString *)serviceName account:(NSString *)account error:(NSError **)error __attribute__((swift_error(none)));
 
+//---添加应用间钥匙串的共享
++ (BOOL)setShareData:(id)data forService:(NSString *)service group:(NSString *)group error:(NSError **)error;
 /**
  Returns an array containing the Keychain's accounts, or `nil` if the Keychain has no accounts.
 
